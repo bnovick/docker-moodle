@@ -2,18 +2,11 @@ language: bash
 services: docker
 fast_finish: true
 env:
-    - "DB=pgsql SUITE=phpunit"
-    - "DB=pgsql SUITE=behat BROWSER=firefox"
-    - "DB=pgsql SUITE=behat BROWSER=chrome"
     - "DB=pgsql SUITE=phpunit-full"
-    - "DB=oracle SUITE=phpunit"
-    - "DB=oracle SUITE=behat BROWSER=firefox"
-    - "DB=mssql SUITE=phpunit"
-    - "DB=mssql SUITE=behat BROWSER=firefox"
-    - "DB=mysql SUITE=phpunit"
-    - "DB=mysql SUITE=behat BROWSER=firefox"
-    - "DB=mariadb SUITE=phpunit"
-    - "DB=mariadb SUITE=behat BROWSER=firefox"
+    - "DB=mssql SUITE=phpunit-full"
+    - "DB=mysql SUITE=phpunit-full"
+    - "DB=mariadb SUITE=phpunit-full"
+    - "DB=oracle SUITE=phpunit-full"
 install:
     - git clone --branch v3.3.0 --depth 1 git://github.com/moodle/moodle $HOME/moodle
     - cp config.docker-template.php $HOME/moodle/config.php
